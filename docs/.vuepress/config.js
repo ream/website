@@ -21,10 +21,12 @@ module.exports = {
           '/guide/custom-document',
           '/guide/serve-public-files',
           '/guide/manipulating-head',
+          '/guide/using-plugins'
         ]
       },
       '/entry-file',
       '/config',
+      '/plugin-api'
     ]
   }
 }
