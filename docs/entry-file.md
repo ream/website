@@ -34,6 +34,12 @@ Custom root component
 
 ## document
 
-- __Type__: `context => html | Promise<html>`
+- __Type__: `context => html`
 
 See more about [custom document](./guide/custom-document.md).
+
+## getDocumentData
+
+- __Type__: `({ router, store, route }) => data`
+
+Get `context.data` for the [`document`](#document) method.

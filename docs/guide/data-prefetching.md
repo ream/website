@@ -48,13 +48,10 @@ In your app entry file, inject initial apollo state to document:
 ```js
 import VueApollo from 'vue-apollo'
 import createApolloClient from './createApolloClient'
+import createRouter from './router'
 
-const document = async ({ headTags, scripts, matchedComponents, app, entry }) => {
-  await entry.apolloProvider.prefetchAll({
-    route: app.$router.currentRoute,
-  }, matchedComponents) 
-  const apolloState = apolloProvider.exportStates()
-
+const document = ({ headTags, scripts, data }) => {
+  const { apolloState } = data
   return `
   <html>
     <head>
@@ -65,7 +62,7 @@ const document = async ({ headTags, scripts, matchedComponents, app, entry }) =>
     </head>
     <body>
       <!--ream-root-placeholder-->
-      ${apolloState}
+      <script>${apolloState}</script>
       ${scripts()}
     </body>
   </html>
@@ -77,14 +74,26 @@ export default () => {
     defaultClient: createApolloClient() // an apollo-client instance
   })
 
+  const router = createRouter()
+
   return {
     document,
     extendRootOptions(rootOptions) {
       rootOptions.provide = apolloProvider.provide()
     },
-    apolloProvider
+    router,
+    async getDocumentData() {
+      await apolloProvider.prefetchAll({
+        route: router.currentRoute,
+      }, router.getMatchedComponents())
+      const apolloState = apolloProvider.exportStates()
+      return {
+        apolloState
+      }
+    }
   }
 }
+
 ```
 
 📝 __createApolloClient.js__:
@@ -95,6 +104,7 @@ import { ApolloClient } from 'apollo-client'
 import { HttpLink } from 'apollo-link-http'
 import { InMemoryCache } from 'apollo-cache-inmemory'
 import VueApollo from 'vue-apollo'
+import fetch from 'isomorphic-fetch'
 
 // Install the vue plugin
 Vue.use(VueApollo)
@@ -102,14 +112,15 @@ Vue.use(VueApollo)
 // Create the apollo client
 export default () => {
   const httpLink = new HttpLink({
+    fetch,
     // You should use an absolute URL here
-    uri: ENDPOINT + '/graphql',
+    uri: 'https://api.graph.cool/simple/v1/cixmkt2ul01q00122mksg82pn',
   })
 
   const cache = new InMemoryCache()
 
   // If on the client, recover the injected state
-  if (!ssr) {
+  if (process.browser) {
     // If on the client, recover the injected state
     if (typeof window !== 'undefined') {
       const state = window.__APOLLO_STATE__
@@ -135,3 +146,5 @@ export default () => {
   return apolloClient
 }
 ```
+
+Check out the complete [source code](https://github.com/ream/ream/tree/master/examples/with-apollo) of this example.
