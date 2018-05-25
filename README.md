@@ -1,1 +1,1 @@
-Check out https://ream.egoist.rocks
+Check out https://ream.js.org
