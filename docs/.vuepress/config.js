@@ -9,7 +9,7 @@ module.exports = {
     editLinks: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/getting-started' }
+      { text: 'Guide', link: '/guide/introduction' }
     ],
     sidebar: [
       {
