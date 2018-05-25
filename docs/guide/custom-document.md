@@ -38,3 +38,4 @@ The arguments of `document` method:
   - `scripts()`: Return a string of script tags.
   - `app`: Root Vue app instance.
   - `matchedComponents`: Matched route components for current route.
+  - `entry`: The object returned by the default export in your entry file.
