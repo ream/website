@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-If you haven't installed Ream inside your project, please navigte to [installtion guide](./installation.md) first.
+If you haven't installed Ream inside your project, please navigte to [installation guide](./installation.md) first.
 
 Configure your npm scripts in `package.json`:
 

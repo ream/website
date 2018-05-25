@@ -1,6 +1,6 @@
 # Entry file
 
-You entry file must export a function which returns an object containing at least a `router` property.
+Your entry file must export a function which returns an object containing at least a `router` property.
 
 ```js
 import Vue from 'vue'
