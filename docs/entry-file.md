@@ -43,3 +43,9 @@ See more about [custom document](./guide/custom-document.md).
 - __Type__: `({ router, store, route }) => data`
 
 Get `context.data` for the [`document`](#document) method.
+
+## getInitialDataContext
+
+- __Type__: `context => void`
+
+Modify the `context` argument of `getInitialData` method of each route component.
