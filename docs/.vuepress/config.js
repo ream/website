@@ -19,8 +19,11 @@ module.exports = {
           '/guide/introduction',
           '/guide/data-prefetching',
           '/guide/custom-document',
+          '/guide/serve-public-files',
+          '/guide/manipulating-head',
         ]
-      }
+      },
+      '/config'
     ]
   }
 }
