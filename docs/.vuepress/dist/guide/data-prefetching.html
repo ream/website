@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Ream | Data prefetching</title>
+    <meta name="description" content="Universal Vue.js Applications Made Simple">
+    
+    
+    <link rel="preload" href="/assets/css/8.styles.19a33b3c.css" as="style"><link rel="preload" href="/assets/js/app.7f00a964.js" as="script"><link rel="preload" href="/assets/js/4.af30194e.js" as="script"><link rel="prefetch" href="/assets/js/5.1acc8354.js"><link rel="prefetch" href="/assets/js/1.ea6d02a9.js"><link rel="prefetch" href="/assets/js/2.6f2720fe.js"><link rel="prefetch" href="/assets/js/3.56c816a6.js"><link rel="prefetch" href="/assets/js/0.4d0881d9.js"><link rel="prefetch" href="/assets/js/6.d52eb835.js"><link rel="prefetch" href="/assets/js/7.ff9261b7.js">
+    <link rel="stylesheet" href="/assets/css/8.styles.19a33b3c.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/" class="home-link router-link-active"><!----><span class="site-name">
+      Ream
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/guide/introduction.html" class="nav-link">Guide</a></div><a href="https://github.com/ream/ream" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><a href="/guide/introduction.html" class="nav-link">Guide</a></div><a href="https://github.com/ream/ream" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav><ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>Guide</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/guide/installation.html" class="sidebar-link">Installation</a></li><li><a href="/guide/introduction.html" class="sidebar-link">Introduction</a></li><li><a href="/guide/data-prefetching.html" class="active sidebar-link">Data prefetching</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/data-prefetching.html#use-vuex" class="sidebar-link">Use Vuex</a></li><li class="sidebar-sub-header"><a href="/guide/data-prefetching.html#use-apollo" class="sidebar-link">Use Apollo</a></li></ul></li><li><a href="/guide/custom-document.html" class="sidebar-link">Custom Document</a></li><li><a href="/guide/serve-public-files.html" class="sidebar-link">Serve public files</a></li><li><a href="/guide/manipulating-head.html" class="sidebar-link">Manipulating &lt;head&gt;</a></li></ul></div></li><li><a href="/config.html" class="sidebar-link">Config</a></li></ul></div><div class="page"><div class="content"><h1 id="data-prefetching"><a href="#data-prefetching" aria-hidden="true" class="header-anchor">#</a> Data prefetching</h1><h2 id="use-vuex"><a href="#use-vuex" aria-hidden="true" class="header-anchor">#</a> Use Vuex</h2><p>The app will wait for the <code>getInitialData</code> method of each route component to be resolved, so you can dispatch Vue actions there to prefetch data.</p><p>In your entry file, return a <code>store</code> method to create Vuex instance:</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> Vuex <span class="token keyword">from</span> <span class="token string">'vuex'</span>
+
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>Vuex<span class="token punctuation">)</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    router<span class="token punctuation">,</span>
+    store<span class="token punctuation">:</span> <span class="token keyword">new</span> <span class="token class-name">Vuex<span class="token punctuation">.</span>Store</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+      <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Then in a route component:</p><div class="language-vue extra-class"><pre class="language-vue"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script language-javascript">
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">{</span>
+  <span class="token keyword">async</span> <span class="token function">getInitialData</span><span class="token punctuation">(</span><span class="token punctuation">{</span> store <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">await</span> store<span class="token punctuation">.</span><span class="token function">dispatch</span><span class="token punctuation">(</span><span class="token string">'someActionType'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>The <code>getInitialData</code> method has following arguments:</p><ul><li>context
+<ul><li>store: Vuex store instance</li><li>router: Vue router instance</li><li>route: Current route</li></ul></li></ul><h2 id="use-apollo"><a href="#use-apollo" aria-hidden="true" class="header-anchor">#</a> Use Apollo</h2><p>In your app entry file, inject initial apollo state to document:</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> VueApollo <span class="token keyword">from</span> <span class="token string">'vue-apollo'</span>
+<span class="token keyword">import</span> createApolloClient <span class="token keyword">from</span> <span class="token string">'./createApolloClient'</span>
+
+<span class="token keyword">const</span> document <span class="token operator">=</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token punctuation">{</span> headTags<span class="token punctuation">,</span> scripts<span class="token punctuation">,</span> matchedComponents<span class="token punctuation">,</span> app<span class="token punctuation">,</span> entry <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">await</span> entry<span class="token punctuation">.</span>apolloProvider<span class="token punctuation">.</span><span class="token function">prefetchAll</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    route<span class="token punctuation">:</span> app<span class="token punctuation">.</span>$router<span class="token punctuation">.</span>currentRoute<span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> matchedComponents<span class="token punctuation">)</span> 
+  <span class="token keyword">const</span> apolloState <span class="token operator">=</span> apolloProvider<span class="token punctuation">.</span><span class="token function">exportStates</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token template-string"><span class="token string">`
+  &lt;html&gt;
+    &lt;head&gt;
+      &lt;meta charset=&quot;utf-8&quot; /&gt;
+      &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot; /&gt;
+      &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui&quot; /&gt;
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">headTags</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+    &lt;/head&gt;
+    &lt;body&gt;
+      &lt;!--ream-root-placeholder--&gt;
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>apolloState<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+      </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">scripts</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">
+    &lt;/body&gt;
+  &lt;/html&gt;
+  `</span></span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> apolloProvider <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">VueApollo</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    defaultClient<span class="token punctuation">:</span> <span class="token function">createApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// an apollo-client instance</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    document<span class="token punctuation">,</span>
+    <span class="token function">extendRootOptions</span><span class="token punctuation">(</span>rootOptions<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      rootOptions<span class="token punctuation">.</span>provide <span class="token operator">=</span> apolloProvider<span class="token punctuation">.</span><span class="token function">provide</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    apolloProvider
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>📝 <strong>createApolloClient.js</strong>:</p><div class="language-js extra-class"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ApolloClient <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-client'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> HttpLink <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-link-http'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> InMemoryCache <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'apollo-cache-inmemory'</span>
+<span class="token keyword">import</span> VueApollo <span class="token keyword">from</span> <span class="token string">'vue-apollo'</span>
+
+<span class="token comment">// Install the vue plugin</span>
+Vue<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>VueApollo<span class="token punctuation">)</span>
+
+<span class="token comment">// Create the apollo client</span>
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> httpLink <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">HttpLink</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token comment">// You should use an absolute URL here</span>
+    uri<span class="token punctuation">:</span> <span class="token constant">ENDPOINT</span> <span class="token operator">+</span> <span class="token string">'/graphql'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> cache <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InMemoryCache</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// If on the client, recover the injected state</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>ssr<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// If on the client, recover the injected state</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">typeof</span> window <span class="token operator">!==</span> <span class="token string">'undefined'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> state <span class="token operator">=</span> window<span class="token punctuation">.</span>__APOLLO_STATE__
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>state<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">// If you have multiple clients, use `state.&lt;client_id&gt;`</span>
+        cache<span class="token punctuation">.</span><span class="token function">restore</span><span class="token punctuation">(</span>state<span class="token punctuation">.</span>defaultClient<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token keyword">const</span> apolloClient <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    link<span class="token punctuation">:</span> httpLink<span class="token punctuation">,</span>
+    cache<span class="token punctuation">,</span>
+    <span class="token operator">...</span><span class="token punctuation">(</span>process<span class="token punctuation">.</span>server <span class="token operator">?</span> <span class="token punctuation">{</span>
+      <span class="token comment">// Set this on the server to optimize queries when SSR</span>
+      ssrMode<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token comment">// This will temporary disable query force-fetching</span>
+      ssrForceFetchDelay<span class="token punctuation">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> apolloClient
+<span class="token punctuation">}</span>
+</code></pre></div></div><div class="content edit-link"><a href="https://github.com/ream/ream-website/edit/master/docs/guide/data-prefetching.md" target="_blank" rel="noopener noreferrer">Edit this page</a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!----></div><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/guide/introduction.html" class="prev">
+          Introduction
+        </a></span><span class="next"><a href="/guide/custom-document.html">
+          Custom Document
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/assets/js/4.af30194e.js" defer></script><script src="/assets/js/app.7f00a964.js" defer></script>
+  </body>
+</html>

@@ -23,7 +23,8 @@ module.exports = {
           '/guide/manipulating-head',
         ]
       },
-      '/config'
+      '/entry-file',
+      '/config',
     ]
   }
 }

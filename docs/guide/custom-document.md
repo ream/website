@@ -1,4 +1,4 @@
-# Custom Document
+# Custom document
 
 You can return a `document` method in entry file to customize generated HTML:
 
