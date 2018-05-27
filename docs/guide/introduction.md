@@ -17,7 +17,7 @@ Configure your npm scripts in `package.json`:
 ```
 
 ::: tip
-By default Ream use current working directory `.`, if you prefer another one you can change the base directory like so: `ream dev ./path/to/dir`.
+By default Ream uses looks for files in current working directory `.`, if you prefer another one you can change the base directory like so: `ream dev ./path/to/dir`.
 :::
 
 Then populate an entry file at `./index.js` (relative to the base directory):
