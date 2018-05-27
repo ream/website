@@ -24,6 +24,7 @@ module.exports = {
           '/guide/custom-document',
           '/guide/custom-root-component',
           '/guide/custom-error-page',
+          '/guide/progressive-web-app',
           '/guide/using-plugins'
         ]
       },
