@@ -50,3 +50,7 @@ api.addGenerateRoutes([
   '/user/kchan'
 ])
 ```
+
+### api.enhanceAppFiles
+
+A `Set` of files for app-level enhancements.

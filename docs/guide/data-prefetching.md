@@ -1,8 +1,30 @@
 # Data prefetching
 
+## Prefetch data per-component
+
+For each route component, you can use the component's `getInitialData` option to prefetch data on the server-side:
+
+```vue
+<template>
+  <div>Hello {{ $initialData.target }}</div>
+</template>
+
+<script>
+export default {
+  getInitialData(context) {
+    return {
+      target: 'World'
+    }
+  }
+}
+</script>
+```
+
+You can use `getInitialData` to return a plain object or a Promise which resolves a plain object, the resolved data will be available in your component as `this.$initialData`.
+
 ## Use Vuex
 
-The app will wait for the `getInitialData` method of each route component to be resolved, so you can dispatch Vue actions there to prefetch data.
+The app will wait for the `getInitialData` method of each route component to be resolved, so you can dispatch Vue actions there to prefetch data instead of returning a plain object.
 
 In your entry file, return a `store` method to create Vuex instance:
 
@@ -33,13 +55,6 @@ export default {
 }
 </script>
 ```
-
-The `getInitialData` method has following arguments:
-
-- context
-  - store: Vuex store instance
-  - router: Vue router instance
-  - route: Current route
 
 ## Use Apollo
 
@@ -148,3 +163,14 @@ export default () => {
 ```
 
 Check out the complete [source code](https://github.com/ream/ream/tree/master/examples/with-apollo) of this example.
+
+## Context
+
+The `context` argument of `getInitialData` method has following properties:
+
+- `router`: The vue-router instance.
+- `route`: The current route.
+- `redirect(url)`: Redirect to a new page.
+- `req`: (server-side only) HTTP incoming message.
+- `res`: (server-side only) HTTP outcoming message.
+- Other properties might be added by third-party plugins.

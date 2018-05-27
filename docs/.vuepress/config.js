@@ -18,10 +18,17 @@ module.exports = {
           '/guide/installation',
           '/guide/introduction',
           '/guide/data-prefetching',
-          '/guide/custom-document',
           '/guide/serve-public-files',
           '/guide/manipulating-head',
+          '/guide/custom-document',
+          '/guide/custom-error-page',
           '/guide/using-plugins'
+        ]
+      },
+      {
+        title: 'Advanced',
+        children: [
+          '/advanced/app-level-enhancements'
         ]
       },
       '/entry-file',
