@@ -2,6 +2,7 @@ module.exports = {
   title: 'Ream',
   description: 'Universal Vue.js Applications Made Simple',
   serviceWorker: true,
+  ga: 'UA-54857209-15',
   themeConfig: {
     repo: 'ream/ream',
     docsRepo: 'ream/ream-website',
