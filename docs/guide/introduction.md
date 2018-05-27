@@ -6,7 +6,7 @@ Ream is a minimal framework for building server-rendered or static website using
 
 If you'd like to learn and build a website with Ream, keep reading and you'll get there pretty fast.
 
-## Getting Started
+## Getting started
 
 If you haven't installed Ream inside your project, please navigte to [installation guide](./installation.md) first.
 
