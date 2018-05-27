@@ -10,7 +10,7 @@ const root = {
 }
 ```
 
-It's really simple, if you want to use own one, you can return a `root` component in your entry file:
+It's really simple, if you want to use your own one, you can return a `root` component in the entry file:
 
 ```js{1,5}
 import root from './Root.vue'
