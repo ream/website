@@ -21,6 +21,7 @@ module.exports = {
           '/guide/serve-public-files',
           '/guide/manipulating-head',
           '/guide/custom-document',
+          '/guide/custom-root-component',
           '/guide/custom-error-page',
           '/guide/using-plugins'
         ]
