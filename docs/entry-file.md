@@ -22,10 +22,6 @@ export default () => {
 
 A vue-router instance.
 
-## store
-
-A Vuex instance.
-
 ## root
 
 - __Default__: `router-view`
@@ -40,9 +36,9 @@ See more about [custom document](./guide/custom-document.md).
 
 ## getDocumentData
 
-- __Type__: `({ router, store, route }) => data`
+- __Type__: `(context) => data | Promise<data>`
 
-Get `context.data` for the [`document`](#document) method.
+Get `context.data` for the [`document`](#document) method. The `context` here is the same as `getInitialData`'s `context` argument.
 
 ## getInitialDataContext
 
