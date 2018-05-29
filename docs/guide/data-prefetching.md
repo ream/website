@@ -22,6 +22,8 @@ export default {
 
 You can use `getInitialData` to return a plain object or a Promise which resolves a plain object, the resolved data will be directly available in your component, just like your component's own `data()` method but `getInitialData()` can also be asynchronous and is evaluated before the component instance is actually created, which also means you can't access to `this` here.
 
+For the initial page load, `getInitialData` will execute on the server only. `getInitialData` will only be executed on the client when navigating to a different route via the `<router-link>` or using the vue-router APIs.
+
 ## Use Vuex
 
 The app will wait for the `getInitialData` method of each route component to be resolved, so you can dispatch Vue actions there to prefetch data instead of returning a plain object.
