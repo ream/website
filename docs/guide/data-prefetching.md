@@ -2,7 +2,7 @@
 
 ## Prefetch data per-component
 
-For each route component, you can use the component's `getInitialData` option to prefetch data on the server-side:
+For each route component, you can use the component's `getInitialData` option to prefetch data:
 
 ```vue
 <template>
