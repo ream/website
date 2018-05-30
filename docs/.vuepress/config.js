@@ -38,7 +38,8 @@ module.exports = {
       },
       '/entry-file',
       '/config',
-      '/plugin-api'
+      '/plugin-api',
+      '/api'
     ]
   }
 }
