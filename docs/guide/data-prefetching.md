@@ -60,31 +60,12 @@ export default {
 
 ## Use Apollo
 
-In your app entry file, inject initial apollo state to document:
+In your app entry file, provide `apolloProvider` on the returned object:
 
 ```js
 import VueApollo from 'vue-apollo'
 import createApolloClient from './createApolloClient'
 import createRouter from './router'
-
-const document = ({ headTags, scripts, data }) => {
-  const { apolloState } = data
-  return `
-  <html>
-    <head>
-      <meta charset="utf-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui" />
-      ${headTags()}
-    </head>
-    <body>
-      <!--ream-root-placeholder-->
-      <script>${apolloState}</script>
-      ${scripts()}
-    </body>
-  </html>
-  `
-}
 
 export default () => {
   const apolloProvider = new VueApollo({
@@ -94,20 +75,8 @@ export default () => {
   const router = createRouter()
 
   return {
-    document,
-    extendRootOptions(rootOptions) {
-      rootOptions.provide = apolloProvider.provide()
-    },
     router,
-    async getDocumentData() {
-      await apolloProvider.prefetchAll({
-        route: router.currentRoute,
-      }, router.getMatchedComponents())
-      const apolloState = apolloProvider.exportStates()
-      return {
-        apolloState
-      }
-    }
+    apolloProvider
   }
 }
 
@@ -140,7 +109,7 @@ export default () => {
   if (process.browser) {
     // If on the client, recover the injected state
     if (typeof window !== 'undefined') {
-      const state = window.__APOLLO_STATE__
+      const state = window.__REAM__.apollo
       if (state) {
         // If you have multiple clients, use `state.<client_id>`
         cache.restore(state.defaultClient)
