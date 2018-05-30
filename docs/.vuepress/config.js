@@ -31,6 +31,7 @@ module.exports = {
       {
         title: 'Advanced',
         children: [
+          '/advanced/custom-server',
           '/advanced/app-level-enhancements',
           '/advanced/cli',
         ]
