@@ -16,7 +16,7 @@ You can use all [config](./config.md) options except those marked as _CLI only_.
 
 There's an addtional option `dev: boolean` to indicate whether it's production build for not.
 
-## app.getRequestHandler
+## app.getRequestHandler()
 
 - __Type__: `() => Promise<requestListener>`
 
