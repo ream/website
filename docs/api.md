@@ -3,7 +3,9 @@
 ## ream(options)
 
 ```js
+const ream = require('ream')
 const config = require('./ream.config')
+
 const app = ream({
   dev: process.env.NODE_ENV !== 'production',
   ...config
