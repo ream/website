@@ -50,9 +50,15 @@ Then in a route component:
 
 ```vue
 <script>
+import { mapState } from 'vuex'
+
 export default {
-  async getInitialData({ store }) {
-    await store.dispatch('someActionType')
+  async getInitialData({ store, route }) {
+    await store.dispatch('getUser', route.params.user)
+  },
+
+  computed: {
+    ...mapState(['user'])
   }
 }
 </script>
