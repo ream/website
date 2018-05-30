@@ -45,3 +45,19 @@ Get `context.data` for the [`document`](#document) method. The `context` here is
 - __Type__: `context => void`
 
 Modify the `context` argument of `getInitialData` method of each route component.
+
+## store
+
+- __Type__: `Vuex.Store`
+
+Use a Vuex instance here for server-side data pretching with Vuex.
+
+This is implemented via a [built-in plugin](https://github.com/ream/ream/tree/master/lib/plugins/vuex).
+
+## apolloProvider
+
+- __Type__: `VueApollo`
+
+Use a VueApollo instance here for server-side data prefetching with Apollo.
+
+This is implemented via a [built-in plugin](https://github.com/ream/ream/tree/master/lib/plugins/apollo).
