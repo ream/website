@@ -4,7 +4,17 @@
 
 Ream is a minimal framework for building server-rendered or static website using Vue.js under the hood. Unlike other popular SSR frameworks, Ream is designed to be more low-level, which means it does not enforce a specific folder structure. In other words, it's pretty similar to a normal SPA, it's possible to migrate a vue-cli or [Poi](https://poi.js.org) app to Ream in minutes!
 
+There's only one simple concept:
+
+You create an app by populating an entry file, says `index.js`. It will be server-rendered so that the initial rendering will faster than a normal SPA, after that the client-side app will take over it.
+
 If you'd like to learn and build a website with Ream, keep reading and you'll get there pretty fast.
+
+## Why the name?
+
+It's somehow inspired by the famous twins __Rem__ and __Ram__ from anime world. __Rem__ is like the client-side and __Ram__ is like the server-side, they cannot live without each other.
+
+__Rem__ wants to do all the jobs on her own but __Ram__ just says "chill my little sister, I'm here to help you out on my end."
 
 ## Getting started
 
