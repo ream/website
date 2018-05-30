@@ -28,7 +28,7 @@ For the initial page load, `getInitialData` will execute on the server only. `ge
 
 The app will wait for the `getInitialData` method of each route component to be resolved, so you can dispatch Vue actions there to prefetch data instead of returning a plain object.
 
-In your entry file, return a `store` method to create Vuex instance:
+In your entry file, provide a `store` instance on the returned object:
 
 ```js
 import Vue from 'vue'
