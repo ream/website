@@ -1,6 +1,6 @@
 # Custom server
 
-You can use Ream with any Node.js server framework for the default `http` module, here's a quick example for using with Express.js:
+You can use Ream with any Node.js server framework or the default `http` module, here's a quick example for using with Express.js:
 
 📝 __server.js__:
 
