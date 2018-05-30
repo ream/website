@@ -19,6 +19,7 @@ Hoist files from `/public/` to root path `/`, for example, with `rootPublicFile:
 
 - __Type__: `string`
 - __Default__: `process.env.HOST || '0.0.0.0'`
+- __CLI only__: `true`
 
 Server host.
 
@@ -26,5 +27,15 @@ Server host.
 
 - __Type__: `number`
 - __Default__: `process.env.PORT || 4000`
+- __CLI only__: `true`
 
 Server port.
+
+## css
+
+### extract
+
+- __Type__: `boolean`
+- __Default__: `true` in production build.
+
+Whether to extract CSS for client bundle.
