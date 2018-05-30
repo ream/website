@@ -4,7 +4,7 @@ actionText: Get Started →
 actionLink: /guide/introduction
 features:
 - title: Approachable
-  details: The overall structure of your project is quite similar to a normal Vue.js SPA.
+  details: The overall structure of your project will be quite similar to a normal Vue.js SPA.
 - title: Versatile
   details: Like vue-cli but for server-rendered and static websites. 
 - title: Fast by default
