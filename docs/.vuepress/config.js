@@ -31,7 +31,8 @@ module.exports = {
       {
         title: 'Advanced',
         children: [
-          '/advanced/app-level-enhancements'
+          '/advanced/app-level-enhancements',
+          '/advanced/cli',
         ]
       },
       '/entry-file',
