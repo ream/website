@@ -28,6 +28,18 @@ A vue-router instance.
 
 Custom root component
 
+## extendRootOptions
+
+- __Type__: `rootOptions => void`
+
+A function that manipulates root Vue app options. e.g. adding `i18n` to root options:
+
+```js
+extendRootOptions(rootOptions) {
+  rootOptions: new VueI18n()
+}
+```
+
 ## document
 
 - __Type__: `context => html`
