@@ -18,6 +18,7 @@ module.exports = {
         children: [
           '/guide/installation',
           '/guide/introduction',
+          '/guide/avoid-stateful-singletons',
           '/guide/data-prefetching',
           '/guide/serve-public-files',
           '/guide/manipulating-head',
