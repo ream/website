@@ -13,6 +13,13 @@ The entry file of your app.
 
 Hoist files from `/public/` to root path `/`, for example, with `rootPublicFile: ['foo.txt']`, you will be able to use `/foo.txt` to access `/public/foo.txt`.
 
+## pwa
+
+- __Type__: `boolean`
+- __Default__: `true`
+
+Whether to enable Progressive Web App features.
+
 ## server
 
 ### host
