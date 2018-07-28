@@ -35,8 +35,13 @@ Custom root component
 A function that manipulates root Vue app options. e.g. adding `i18n` to root options:
 
 ```js
-extendRootOptions(rootOptions) {
-  rootOptions: new VueI18n()
+export default () => {
+  const i18n = new VueI18n()
+  return {
+    extendRootOptions(rootOptions) {
+      rootOptions.i18n = i18n
+    }
+  }
 }
 ```
 
