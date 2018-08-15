@@ -6,7 +6,7 @@ Ream is a minimal framework for building server-rendered or static website using
 
 There's only one basic concept:
 
-You create an app by populating an entry file, says `index.js`. It will be server-rendered so that the initial rendering will faster than a normal SPA, after that the client-side app will take over it.
+You create an app by populating an entry file, says `index.js`. It will be server-rendered so that the initial rendering will be faster than a normal SPA, after that the client-side app will take over it.
 
 If you'd like to learn and build a website with Ream, keep reading and you'll get there pretty fast.
 
