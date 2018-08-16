@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # Entry file
 
 Your entry file must export a function which returns an object containing at least a `router` property.
@@ -49,7 +53,7 @@ export default () => {
 
 - __Type__: `context => html`
 
-See more about [custom document](./guide/custom-document.md).
+See more about [custom document](../guide/custom-document.md).
 
 ## getDocumentData
 

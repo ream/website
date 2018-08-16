@@ -9,8 +9,33 @@ module.exports = {
     editLinks: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/introduction' },
-      { text: 'Config', link: '/config' }
+      {
+        text: 'Learn',
+        items: [
+          { text: 'Guide', link: '/guide/introduction' },
+          {
+            text: 'API',
+            link: '/api'
+          },
+          {
+            text: 'Plugin API',
+            link: '/plugin-api'
+          }
+        ]
+      },
+      {
+        text: 'References',
+        items: [
+          {
+            text: 'Config file',
+            link: '/references/config'
+          },
+          {
+            text: 'Entry file',
+            link: '/references/entry'
+          }
+        ]
+      }
     ],
     sidebar: [
       {
@@ -33,7 +58,7 @@ module.exports = {
         children: [
           '/guide/custom-document',
           '/guide/custom-root-component',
-          '/guide/custom-error-page',
+          '/guide/custom-error-page'
         ]
       },
       {
@@ -42,12 +67,9 @@ module.exports = {
         children: [
           '/advanced/custom-server',
           '/advanced/app-level-enhancements',
-          '/advanced/cli',
+          '/advanced/cli'
         ]
-      },
-      '/entry-file',
-      '/plugin-api',
-      '/api'
+      }
     ]
   }
 }

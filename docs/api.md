@@ -1,19 +1,29 @@
 # API
 
-## ream(options)
+## ream([options],[config])
 
 ```js
 const ream = require('ream')
 
 // It will load ream.config.js automatically
-const app = ream({
-  dev: process.env.NODE_ENV !== 'production'
-})
+const app = ream()
 ```
 
-You can use all [config](./config.md) options except those marked as _CLI only_.
+### options
 
-There's an addtional option `dev: boolean` to indicate whether it's production build for not.
+#### options.dev
+
+- __Type__: `boolean`
+- __Default__: `process.env.NODE_ENV !== 'production'`
+
+Run in development mode or not.
+
+#### options.config
+
+- __Type__: `false` `string`
+- __Default__: `ream.config.js`
+
+Load `ream.config.js` or not.
 
 ## app.getRequestHandler()
 
