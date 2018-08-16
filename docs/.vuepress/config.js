@@ -9,11 +9,13 @@ module.exports = {
     editLinks: true,
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Guide', link: '/guide/introduction' }
+      { text: 'Guide', link: '/guide/introduction' },
+      { text: 'Config', link: '/config' }
     ],
     sidebar: [
       {
         title: 'Guide',
+        collapsable: false,
         children: [
           '/guide/installation',
           '/guide/introduction',
@@ -21,15 +23,22 @@ module.exports = {
           '/guide/data-prefetching',
           '/guide/serve-public-files',
           '/guide/manipulating-head',
-          '/guide/custom-document',
-          '/guide/custom-root-component',
-          '/guide/custom-error-page',
           '/guide/progressive-web-app',
           '/guide/using-plugins'
         ]
       },
       {
+        title: 'Customization',
+        collapsable: false,
+        children: [
+          '/guide/custom-document',
+          '/guide/custom-root-component',
+          '/guide/custom-error-page',
+        ]
+      },
+      {
         title: 'Advanced',
+        collapsable: false,
         children: [
           '/advanced/custom-server',
           '/advanced/app-level-enhancements',
@@ -37,7 +46,6 @@ module.exports = {
         ]
       },
       '/entry-file',
-      '/config',
       '/plugin-api',
       '/api'
     ]

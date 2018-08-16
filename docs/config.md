@@ -1,3 +1,7 @@
+---
+sidebar: auto
+---
+
 # Config
 
 Ream loads `ream.config.js` from your project root.
