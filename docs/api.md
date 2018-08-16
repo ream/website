@@ -4,11 +4,10 @@
 
 ```js
 const ream = require('ream')
-const config = require('./ream.config')
 
+// It will load ream.config.js automatically
 const app = ream({
-  dev: process.env.NODE_ENV !== 'production',
-  ...config
+  dev: process.env.NODE_ENV !== 'production'
 })
 ```
 

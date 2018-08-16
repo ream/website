@@ -75,6 +75,12 @@ export default {
 
 The plain object which is returned by the function you export in the entry file.
 
+### addMiddleware(middleware)
+
+- middleware: `() => void | Promise<void>`
+
+Add a middleware to run before starting rendering on server-side, and on client-side it will run before initial loading and route navigating.
+
 ### event
 
 #### event.$on('before-server-render', handler)
