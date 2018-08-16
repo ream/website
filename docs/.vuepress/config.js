@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Ream',
-  description: 'Universal Vue.js Applications Made Simple',
+  description: 'A Framework For Building Universal Vue.js Applications',
   ga: 'UA-54857209-15',
   themeConfig: {
     repo: 'ream/ream',
@@ -44,6 +44,7 @@ module.exports = {
         children: [
           '/guide/installation',
           '/guide/introduction',
+          '/guide/routing',
           '/guide/avoid-stateful-singletons',
           '/guide/data-prefetching',
           '/guide/serve-public-files',

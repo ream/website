@@ -1,6 +1,6 @@
 # Avoid Stateful Singletons
 
-As per [Vue offcial SSR guide](https://ssr.vuejs.org/guide/structure.html#avoid-stateful-singletons), we need to create a fresh Vue instance for each requestes to avoid sharing states across requests.
+As per [Vue offcial SSR guide](https://ssr.vuejs.org/guide/structure.html#avoid-stateful-singletons), we need to create fresh instances for each requestes to avoid sharing states across requests.
 
 For example, in Ream you should create a vue-router instance within the exported function in your entry file:
 
