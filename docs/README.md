@@ -9,5 +9,5 @@ features:
   details: It's as extensible as vue-cli but designed exclusively for server-rendered and static websites. 
 - title: Performant
   details: Best practices baked-in, offline support and a lot of goodies for building a modern web app without a lot of effort.
-footer: MIT Licensed | Copyright © 2017-present EGOIST
+footer: MIT Licensed | Copyright © 2018-present EGOIST
 ---
