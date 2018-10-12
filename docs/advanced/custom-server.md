@@ -8,7 +8,7 @@ You can use Ream with any Node.js server framework or the default `http` module,
 const server = require('express')()
 const ream = require('ream')
 
-const port = proess.env.PORT || 3000
+const port = process.env.PORT || 3000
 const config = require('./ream.config')
 const app = ream({
   dev: process.env.NODE_ENV !== 'production',
